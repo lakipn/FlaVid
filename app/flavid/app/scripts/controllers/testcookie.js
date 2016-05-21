@@ -1,5 +1,9 @@
 /**
- * Created by lazar on 5/21/16.
+ * @ngdoc function
+ * @name flavidApp.controller:TestCookieCtrl
+ * @description
+ * # TestCookieCtrl
+ * Controller of the flavidApp
  */
 'use strict';
 

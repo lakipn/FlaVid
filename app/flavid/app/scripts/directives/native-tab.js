@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:nativeTab
+ * @name flavidApp.directive:nativeTab
  * @description
  * # nativeTab
  */

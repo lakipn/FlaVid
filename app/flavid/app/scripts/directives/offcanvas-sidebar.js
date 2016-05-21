@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:offcanvasSidebar
+ * @name flavidApp.directive:offcanvasSidebar
  * @description
  * # offcanvasSidebar
  */

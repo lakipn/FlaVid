@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:anchorScroll
+ * @name flavidApp.directive:anchorScroll
  * @description
  * # anchorScroll
  */

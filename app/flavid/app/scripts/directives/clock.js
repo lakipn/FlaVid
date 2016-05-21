@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:clock
+ * @name flavidApp.directive:clock
  * @description
  * # clock
  */

@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:tileControlFullscreen
+ * @name flavidApp.directive:tileControlFullscreen
  * @description
  * # tileControlFullscreen
  */

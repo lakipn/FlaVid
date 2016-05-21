@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:prettyprint
+ * @name flavidApp.directive:prettyprint
  * @description
  * # prettyprint
  */

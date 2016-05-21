@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:checkToggler
+ * @name flavidApp.directive:checkToggler
  * @description
  * # checkToggler
  */

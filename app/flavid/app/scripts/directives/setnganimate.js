@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:setNgAnimate
+ * @name flavidApp.directive:setNgAnimate
  * @description
  * # setNgAnimate
  */

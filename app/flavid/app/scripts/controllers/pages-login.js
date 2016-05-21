@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name minovateApp.controller:PagesLoginCtrl
+ * @name flavidApp.controller:PagesLoginCtrl
  * @description
  * # PagesLoginCtrl
- * Controller of the minovateApp
+ * Controller of the flavidApp
  */
 app
   .controller('LoginCtrl', ['sharedData', 'loginFactory', '$scope', '$rootScope', '$state', '$http', '$cookieStore', function (sharedData, loginFactory, $scope, $rootScope, $state, $http, $cookieStore) {

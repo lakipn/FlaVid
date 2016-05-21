@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:chartMorris
+ * @name flavidApp.directive:chartMorris
  * @description
  * # chartMorris
  * https://github.com/jasonshark/ng-morris/blob/master/src/ngMorris.js

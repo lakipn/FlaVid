@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:collapseSidebarSm
+ * @name flavidApp.directive:collapseSidebarSm
  * @description
  * # collapseSidebarSm
  */

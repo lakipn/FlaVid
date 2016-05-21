@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:activateButton
+ * @name flavidApp.directive:activateButton
  * @description
  * # activateButton
  */

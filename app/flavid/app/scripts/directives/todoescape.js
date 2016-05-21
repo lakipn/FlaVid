@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:todoEscape
+ * @name flavidApp.directive:todoEscape
  * @description
  * # todoEscape
  */

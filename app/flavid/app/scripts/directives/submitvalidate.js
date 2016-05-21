@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:submitValidate
+ * @name flavidApp.directive:submitValidate
  * @description
  * # submitValidate
  */

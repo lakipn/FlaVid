@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:activeToggle
+ * @name flavidApp.directive:activeToggle
  * @description
  * # activeToggle
  */

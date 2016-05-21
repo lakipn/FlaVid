@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:tileControlRefresh
+ * @name flavidApp.directive:tileControlRefresh
  * @description
  * # tileControlRefresh
  */

@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:sparkline
+ * @name flavidApp.directive:sparkline
  * @description
  * # sparkline
  */

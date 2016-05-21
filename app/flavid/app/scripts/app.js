@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name minovateApp
+ * @name flavidApp
  * @description
- * # minovateApp
+ * # flavidApp
  *
  * Main module of the application.
  */

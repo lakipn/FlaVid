@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:slimScroll
+ * @name flavidApp.directive:slimScroll
  * @description
  * # slimScroll
  */

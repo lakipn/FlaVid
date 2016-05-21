@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:gaugeChart
+ * @name flavidApp.directive:gaugeChart
  * @description
  * # gaugeChart
 */

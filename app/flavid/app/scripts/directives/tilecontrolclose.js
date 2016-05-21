@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:TileControlClose
+ * @name flavidApp.directive:TileControlClose
  * @description
  * # TileControlClose
  */

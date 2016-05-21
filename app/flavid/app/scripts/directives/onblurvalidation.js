@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:onBlurValidation
+ * @name flavidApp.directive:onBlurValidation
  * @description
  * # onBlurValidation
  */

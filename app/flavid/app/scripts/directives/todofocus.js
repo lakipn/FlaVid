@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:todoFocus
+ * @name flavidApp.directive:todoFocus
  * @description
  * # todoFocus
  */

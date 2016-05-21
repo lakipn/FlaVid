@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:tileControlToggle
+ * @name flavidApp.directive:tileControlToggle
  * @description
  * # tileControlToggle
  */

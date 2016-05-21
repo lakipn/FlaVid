@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:pageLoader
+ * @name flavidApp.directive:pageLoader
  * @description
  * # pageLoader
  */

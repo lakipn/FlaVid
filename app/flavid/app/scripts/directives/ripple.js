@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:ripple
+ * @name flavidApp.directive:ripple
  * @description
  * # ripple
  */

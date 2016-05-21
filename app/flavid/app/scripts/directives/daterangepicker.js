@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:daterangepicker
+ * @name flavidApp.directive:daterangepicker
  * @description
  * # daterangepicker
  */

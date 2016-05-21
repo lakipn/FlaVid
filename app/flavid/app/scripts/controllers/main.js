@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name minovateApp.controller:MainCtrl
+ * @name flavidApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the minovateApp
+ * Controller of the flavidApp
  */
 app
   .controller('MainCtrl', function ($scope, $http, $translate) {

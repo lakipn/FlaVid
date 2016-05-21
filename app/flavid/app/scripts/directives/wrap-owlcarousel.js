@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:wrapOwlcarousel
+ * @name flavidApp.directive:wrapOwlcarousel
  * @description
  * # wrapOwlcarousel
  */

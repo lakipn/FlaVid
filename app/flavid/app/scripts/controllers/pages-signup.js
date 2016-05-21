@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name minovateApp.controller:PagesSignupCtrl
+ * @name flavidApp.controller:PagesSignupCtrl
  * @description
  * # PagesSignupCtrl
- * Controller of the minovateApp
+ * Controller of the flavidApp
  */
 app
   .controller('SignupCtrl', ['loginFactory', '$scope', '$state', '$http', '$cookieStore', function (loginFactory, $scope, $state, $http, $cookieStore) {

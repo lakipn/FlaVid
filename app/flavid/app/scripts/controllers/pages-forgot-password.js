@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name minovateApp.controller:PagesForgotPasswordCtrl
+ * @name flavidApp.controller:PagesForgotPasswordCtrl
  * @description
  * # PagesForgotPasswordCtrl
- * Controller of the minovateApp
+ * Controller of the flavidApp
  */
 app
   .controller('ForgotPasswordCtrl', function ($scope) {

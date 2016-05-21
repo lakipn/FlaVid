@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:vectorMap
+ * @name flavidApp.directive:vectorMap
  * @description
  * # vectorMap
  */

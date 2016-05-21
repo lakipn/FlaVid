@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name minovateApp.directive:navCollapse
+ * @name flavidApp.directive:navCollapse
  * @description
  * # navCollapse
  * # sidebar navigation dropdown collapse
