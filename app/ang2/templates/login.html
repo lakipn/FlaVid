@@ -1,0 +1,157 @@
+<!-- BEGIN LOGIN SECTION -->
+<section class="section-account">
+    <div class="img-backdrop" style="background-image: url('src/img/img16.jpg')"></div>
+    <div class="spacer"></div>
+    <div class="card contain-sm style-transparent">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <br/>
+                    <span class="text-lg text-bold text-primary">LOGIN AND EXPLORE NEW HORIZONS</span>
+                    <br/><br/>
+                    <form class="form form-validate" (ngSubmit)="onLogin(fl)" #fl="ngForm">
+                        <div class="form-group">
+                            <input ngControl="username" type="text" class="form-control" id="username" name="username"
+                                   required #username="ngForm">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-group">
+                            <input ngControl="password" type="password" class="form-control" id="password"
+                                   name="password" required #password="ngForm">
+                            <label for="password">Password</label>
+                            <p class="help-block"><a href="#">Forgotten?</a></p>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                <div class="checkbox checkbox-inline checkbox-styled">
+                                    <label>
+                                        <input type="checkbox"> <span>Remember me</span>
+                                    </label>
+                                </div>
+                            </div><!--end .col -->
+                            <div class="col-xs-6 text-right">
+                                <button type="submit" class="btn btn-primary btn-raised">Login</button>
+                            </div><!--end .col -->
+                        </div><!--end .row -->
+                    </form>
+                </div><!--end .col -->
+                <div class="col-sm-5 col-sm-offset-1 text-center">
+                    <h3 class="text-light">
+                        No account yet?
+                    </h3>
+                    <a class="btn btn-block btn-raised btn-primary" href="#" data-toggle="modal" data-target="#myModal">Sign
+                        up here</a>
+                    <h3 class="text-light">
+                        <br/>or <br/><br/>
+                    </h3>
+                    <p>
+                        <a href="#" class="btn btn-block btn-raised btn-info"><i class="fa fa-facebook pull-left"></i>Login
+                            with Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#" class="btn btn-block btn-raised btn-info"><i class="fa fa-twitter pull-left"></i>Login
+                            with Twitter</a>
+                    </p>
+                </div><!--end .col -->
+            </div><!--end .row -->
+        </div><!--end .card-body -->
+    </div><!--end .card -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Register to FlaVid video sharing platform</h4>
+                </div>
+
+                <form class="form form-validate" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input ngControl="username" type="text" placeholder="username..." class="form-control"
+                                   id="regUsername" required #regusername="ngForm">
+                            <label for="regUsername">Username</label>
+                            <span class="validation-error help-block" *ngIf="!regusername.valid" #v1>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <input ngControl="password" type="password" placeholder="password..." class="form-control"
+                                   id="regPassword" required #regpassword="ngForm">
+                            <label for="regPassword">Password</label>
+                            <span class="validation-error help-block" *ngIf="!regpassword.valid" #v2>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <input ngControl="email" type="text" placeholder="email..." class="form-control"
+                                   id="regEmail" required #regemail="ngForm"/>
+                            <label for="regEmail">Email</label>
+                            <span class="validation-error help-block" *ngIf="!regemail.valid" #v3>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <input ngControl="birthday" min="1850-01-01" max="2001-12-30" type="date"
+                                   placeholder="birthday..." class="form-control" id="regBirthday" required
+                                   #regbirthday="ngForm"/>
+                            <label for="regBirthday">Birthday</label>
+                            <span class="validation-error help-block" *ngIf="!regbirthday.valid" #v4>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <select ngControl="gender" id="reggender" name="reggender" class="form-control"
+                                    #reggender="ngForm">
+                                <option value="">&nbsp;</option>
+                                <option value="guy">Guy</option>
+                                <option value="girl">Girl</option>
+                                <option value="couple">Couple</option>
+                                <option value="transgender">Transgender</option>
+                            </select>
+                            <label for="regGender">Gender</label>
+                            <span class="validation-error help-block"
+                                  *ngIf="!reggender.valid || (reggender.value != 'guy' && reggender.value != 'girl' && reggender.value != 'couple' && reggender.value != 'transgender')"
+                                  #v5>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <select ngControl="relationshipStatus" id="regrelationshipstatus"
+                                    name="regrelationshipstatus" class="form-control" #regrelationshipstatus="ngForm">
+                                <option value="">&nbsp;</option>
+                                <option value="single">Single</option>
+                                <option value="taken">Taken</option>
+                                <option value="open">Open</option>
+                            </select>
+                            <label for="regrelationshipstatus">Relationship status</label>
+                            <span class="validation-error help-block"
+                                  *ngIf="!regrelationshipstatus.valid || (regrelationshipstatus.value != 'single' && regrelationshipstatus.value != 'taken' && regrelationshipstatus.value != 'open')"
+                                  #v6>Not valid</span>
+                        </div>
+                        <div class="form-group">
+                            <select ngControl="interestedIn" id="regInterestedIn" name="regInterestedIn"
+                                    class="form-control" #reginterestedIn="ngForm">
+                                <option value="">&nbsp;</option>
+                                <option value="guys">Guys</option>
+                                <option value="girls">Girls</option>
+                                <option value="both">Both</option>
+                            </select>
+                            <label for="regInterestedIn">Interested in</label>
+                            <span class="validation-error help-block"
+                                  *ngIf="!reginterestedIn.valid || (reginterestedIn.value != 'guys' && reginterestedIn.value != 'girls' && reginterestedIn.value != 'both')"
+                                  #v7>Not valid</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" *ngIf="registred == true" style="float: left;"
+                                data-dismiss="modal">Successfully dived into an amazing world!
+                        </button>
+                        <button [disabled]="!f.valid || !isValid()" type="submit" class="btn btn-primary">Register
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END LOGIN SECTION -->
