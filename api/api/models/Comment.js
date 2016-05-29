@@ -8,13 +8,12 @@
 module.exports = {
 
   attributes: {
-    userId: { type: 'number', required: true },
+    userId: { type: 'string', required: true },
     firstName: { type: 'string', size: 256, required: true },
     lastName: { type: 'string', size: 256, required: true },
     body: { type: 'string', size: 8192, required: true },
-    datePosted: { type: 'datetime', required: true, defaultsTo: Date.now() },
+    datePosted: { type: 'datetime', required: true, defaultsTo: (new Date()) },
     video: { model: 'Video', required: true }
   }
-  
-};
 
+};
