@@ -8,11 +8,11 @@
 module.exports = {
 
   attributes: {
-    userId: { type: 'number', required: true },
+    userId: { type: 'string', required: true },
     firstName: { type: 'string', size: 256, required: true },
     lastName: { type: 'string', size: 256, required: true },
     video: { model: 'Video', required: true }
   }
-  
+
 };
 
