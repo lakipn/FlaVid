@@ -1,4 +1,9 @@
 module.exports = {
+  /**
+   * Method for checking user's credentials (LOGIN)
+   * @param request
+   * @param response
+     */
   checkLogin : function(request, response) {
     User.native(function(err, collection) {
       if(err)
