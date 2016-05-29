@@ -19,7 +19,7 @@ module.exports = {
     url: { type: 'string', size: 1024, required: true },
     likes: { collection: 'Like', via: 'video' },
     comments: { collection: 'Comment', via: 'video' },
-    dateUploaded: { type: 'datetime', defaultsTo: Date.now() },
+    dateUploaded: { type: 'datetime', defaultsTo: new Date() },
     showcaseImages: { collection: 'Videoshowcaseimage', via: 'video' },
     hd: { type: 'boolean', defaultsTo: 'false' },
     vr: { type: 'boolean', defaultsTo: 'false' }
