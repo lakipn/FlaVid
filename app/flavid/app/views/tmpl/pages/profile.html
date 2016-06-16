@@ -1,0 +1,481 @@
+<div class="page page-profile">
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile widget -->
+          <div class="tile-widget p-30 text-center">
+
+            <div class="thumb thumb-xl">
+              <img class="img-circle" src="images/arnold-avatar.jpg" alt="">
+            </div>
+            <h4 class="mb-0"><strong>{{user.firstName}}</strong> {{user.lastName}}</h4>
+            <span class="text-muted">@{{user.username}}</span>
+            <div class="mt-10">
+              <button class="btn btn-rounded-20 btn-sm btn-greensea">Follow</button>
+              <button class="btn btn-rounded-20 btn-sm btn-lightred">Message</button>
+            </div>
+
+          </div>
+          <!-- /tile widget -->
+
+          <!-- tile body -->
+          <div class="tile-body text-center bg-blue p-0">
+
+            <ul class="list-inline tbox m-0">
+              <li class="tcol p-10">
+                <h2 class="m-0">695</h2>
+                <span class="text-transparent-white">Videos</span>
+              </li>
+              <li class="tcol bg-blue dker p-10">
+                <h2 class="m-0">1 269</h2>
+                <span class="text-transparent-white">Followers</span>
+              </li>
+              <li class="tcol p-10">
+                <h2 class="m-0">369</h2>
+                <span class="text-transparent-white">Following</span>
+              </li>
+            </ul>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- col -->
+      <div class="col-md-4">
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile header -->
+          <div class="tile-header">
+            <h1 class="custom-font"><strong>Upload</strong> New Video</h1>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <form name="newvideoform">
+              <!--<p>{{f.name}} {{errFile.name}} {{errFile.$error}} {{errFile.$errorParam}}</p>-->
+              <div class="clearfix"></div>
+              <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Video title</label>
+                  <input md-maxlength="200" name="title" required ng-model="video.title">
+                  <div ng-messages="newvideoform.title.$error">
+                    <div ng-message="required">Title field is required.</div>
+                    <div ng-message="md-maxlength">Title field has to be less than 200 characters long.</div>
+                  </div>
+                </md-input-container>
+              </div>
+
+              <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Description</label>
+                  <textarea ng-model="video.description" name="description" columns="1" rows="3" md-maxlength="1000"
+                            required></textarea>
+                  <div ng-messages="newvideoform.description.$error">
+                    <div ng-message="required">Title field is required.</div>
+                    <div ng-message="md-maxlength">Decription field has to be less than 1000 characters long.</div>
+                  </div>
+                </md-input-container>
+              </div>
+
+              <!--<div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Category</label>
+                  <md-select ng-model = "category" required>
+                    <md-optgroup label = "Categories">
+                      <md-option ng-value = "category.name" ng-repeat = "category in categories">{{category.name}}</md-option>
+                    </md-optgroup>
+                  </md-select>
+                </md-input-container>
+              </div>-->
+
+              <div layout layout-sm="column">
+                <div class="form-group">
+                  <div class="row">
+                    <label class="col-sm-12 control-label">Categories</label>
+                    <div class="col-sm-12">
+                      <select ng-model="category" multiple chosen="{width: '100%'}">
+                        <option ng-value="category.name" ng-repeat="category in categories">{{category.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full"/>
+
+              <center>
+                <button class="btn btn-lg btn-primary btn-rounded-20 btn-ef btn-ef-5 btn-ef-5a mb-10" type="file"
+                        ngf-select="uploadVideos($file, $invalidFiles)"
+                        accept="video/*" ngf-max-size="500MB"><i class="glyphicon glyphicon-upload"></i>
+                  <span>Upload</span></button>
+                <!--<p>{{f.result}}</p>-->
+              </center>
+
+              <div class="clearfix"></div>
+              <uib-progressbar class="progress-striped active not-rounded" value="f.progress" type="dutch" ng-show="f">
+                <b>{{f.progress}}%</b>
+              </uib-progressbar>
+            </form>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile header -->
+          <div class="tile-header">
+            <h1 class="custom-font"><strong>About</strong> Me</h1>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <!--<p>
+              <a href="#" class="icon icon-info icon-ef-3 icon-ef-3b icon-color"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="icon icon-primary icon-ef-3 icon-ef-3b icon-color"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="icon icon-lightred icon-ef-3 icon-ef-3b icon-color"><i
+                class="fa fa-google-plus"></i></a>
+              <a href="#" class="icon icon-hotpink icon-ef-3 icon-ef-3b icon-color"><i class="fa fa-dribbble"></i></a>
+            </p>-->
+
+            <p class="text-default lt">{{user.aboutMe}}</p>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+      <!-- col -->
+      <div class="col-md-4">
+
+
+        <!-- tile -->
+        <section class="tile tile-simple" fullscreen="isFullscreen02">
+
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Popular</strong></h1>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+
+          <!-- tile footer -->
+          <div class="tile-footer">
+            <div class="text-center">
+              <a href="#" class="btn btn-sm btn-default">
+                Load More …
+              </a>
+            </div>
+          </div>
+          <!-- /tile footer -->
+
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+      <!-- col -->
+      <div class="col-md-4">
+
+
+        <!-- tile -->
+        <section class="tile tile-simple" fullscreen="isFullscreen02">
+
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Fresh</strong></h1>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+          <!-- tile -->
+          <section class="tile tile-simple">
+
+            <!-- tile widget -->
+            <div class="tile-widget p-30 text-center">
+
+              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
+
+              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
+              <span class="text-muted">@usernamekorisnika</span>
+
+            </div>
+            <!-- /tile widget -->
+
+            <!-- tile body -->
+            <div class="tile-body text-center bg-blue p-0">
+
+              <ul class="list-inline tbox m-0">
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">12695</h2>
+                  <span class="text-transparent-white">Views</span>
+                </li>
+                <li class="tcol bg-blue dker p-10">
+                  <h2 class="m-0 video-box-stats">1 269</h2>
+                  <span class="text-transparent-white">Comments</span>
+                </li>
+                <li class="tcol p-10">
+                  <h2 class="m-0 video-box-stats">Sports</h2>
+                  <span class="text-transparent-white">Category</span>
+                </li>
+              </ul>
+
+            </div>
+            <!-- /tile body -->
+
+          </section>
+          <!-- /tile -->
+
+
+          <!-- tile footer -->
+          <div class="tile-footer">
+            <div class="text-center">
+              <a href="#" class="btn btn-sm btn-default">
+                Load More …
+              </a>
+            </div>
+          </div>
+          <!-- /tile footer -->
+
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+  </div>
+  <!-- /page content -->
+
+
+</div>
+
