@@ -39,6 +39,6 @@ app
         gender: form.gender,
         relationshipStatus: form.relationshipStatus,
         interestedIn: form.interestedIn };
-      loginFactory.testPost($scope, $http, user);
+      loginFactory.register($scope, $http, user);
     }
   }]);
