@@ -4,7 +4,14 @@ app.factory('loginFactory', function() {
   var loginFactory = {};
   var data = [];
 
-  loginFactory.testGet = function($scope, $http, username, password) {
+  /**
+   * Checking if user with specified username and password exists
+   * @param $scope
+   * @param $http
+   * @param username
+   * @param password
+     */
+  loginFactory.checkLogin = function ($scope, $http, username, password) {
     $http.get('http://localhost:1337/user/checkLogin', {
         params : {
           username : username,
@@ -19,7 +26,13 @@ app.factory('loginFactory', function() {
       });
   };
 
-  loginFactory.testPost = function($scope, $http, user) {
+  /**
+   * User registration --- missing: validation, checking if username or email exists
+   * @param $scope
+   * @param $http
+   * @param user
+     */
+  loginFactory.register = function($scope, $http, user) {
     var body = JSON.stringify(user);
     $http.post('http://localhost:1337/user', body)
       .then(function(response) {
