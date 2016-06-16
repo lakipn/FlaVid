@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
     title: { type: 'string', size: 256, required: true },
     description: { type: 'string', size: 2048, defaultsTo: '' },
+    userId : { type: 'string', size: 2048, defaultsTo: '' },
     duration: { type: 'integer', required: true },
     categories: { collection: 'Videoscategory', via: 'video' },
     viewsCount: { type: 'integer', defaultsTo: 0 },
