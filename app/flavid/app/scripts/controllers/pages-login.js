@@ -28,7 +28,7 @@ app
     });
 
     $scope.login = function (form) {
-      loginFactory.testGet($scope, $http, form.username, form.password);
+      loginFactory.checkLogin($scope, $http, form.username, form.password);
       //$state.go('app.dashboard');
     };
   }]);
