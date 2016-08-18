@@ -44,6 +44,11 @@ module.exports = {
     return response.ok({ logout : true });
   },
 
+  /**
+   * Get user's ID using his username. Used in /profile/{username}
+   * @param request
+   * @param response
+     */
   getUserIdByUsername : function(request, response) {
     User.find({
       username: request.param('username')

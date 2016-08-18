@@ -149,6 +149,11 @@ module.exports = {
     });
   },
 
+  /**
+   * Get specific user's fresh videos.
+   * @param request
+   * @param response
+     */
   myFreshVideos: function (request, response) {
     Video.find({userId: request.param('userId')}).populate('categories').sort("createdAt DESC").exec(function (err, res) {
       if(err)
@@ -158,6 +163,11 @@ module.exports = {
     });
   },
 
+  /**
+   * Get specific user's popular videos.
+   * @param request
+   * @param response
+     */
   myPopularVideos: function (request, response) {
     Video.find({userId: request.param('userId')}).populate('categories').sort("viewsCount DESC").exec(function (err, res) {
       if(err)
@@ -265,6 +275,11 @@ module.exports = {
     });
   },
 
+  /**
+   * Get video's id using its URL.
+   * @param request
+   * @param response
+     */
   getVideoIdByUrl: function (request, response) {
     Video.find({url: request.query.url}).exec(function (err, res) {
       if (err)

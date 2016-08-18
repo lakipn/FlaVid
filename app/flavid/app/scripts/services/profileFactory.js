@@ -46,6 +46,12 @@ app.factory('profileFactory', function() {
     });
   };
 
+  /**
+   * Setting video's thumbnail. NOTE: Not finished.
+   * @param $scope
+   * @param $http
+   * @param data
+     */
   profileFactory.setThumbnail = function($scope, $http, data) {
     $http.post('http://localhost:1337/video/populateThumbnail', data).then(function(response) {
       $scope.f.result.embededThumbnail = response.data;
@@ -54,6 +60,12 @@ app.factory('profileFactory', function() {
     });
   };
 
+  /**
+   * Get username from /profile/{username} and get profile's ID
+   * @param $scope
+   * @param $http
+   * @param username
+     */
   profileFactory.getUserIdByUsername = function($scope, $http, username) {
     $http.post('http://localhost:1337/user/getUserIdByUsername', {
       username: username

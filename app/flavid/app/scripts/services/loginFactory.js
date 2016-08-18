@@ -44,6 +44,11 @@ app.factory('loginFactory', function () {
       });
   };
 
+  /**
+   * User logout
+   * @param $scope
+   * @param $http
+     */
   loginFactory.logout = function($scope, $http) {
     $http.post('http://localhost:1337/user/logout').then(function(response) {
       $scope.logout = response.data.logout;
