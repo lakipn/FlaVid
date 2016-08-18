@@ -15,15 +15,16 @@ app
 
     if($cookieStore.get('uid') != null)
     {
-      $state.go('testcookie');
+      $state.go('app.home');
     }
 
     $scope.$watch('getted', function() {
       if($scope.prosao && $scope.getted !== {} && $scope.getted != "") {
         sharedData.setUser($scope.getted);
         $rootScope.uid = $scope.getted;
-        $cookieStore.put('uid', $scope.getted._id);
-        $state.go('testcookie');
+        $cookieStore.put('uid', $scope.getted.id);
+        //$state.go('testcookie');
+        $state.go('app.home');
       }
     });
 

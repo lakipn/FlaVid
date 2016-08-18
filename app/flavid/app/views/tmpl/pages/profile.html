@@ -99,17 +99,6 @@
                 </md-input-container>
               </div>
 
-              <!--<div layout layout-sm="column">
-                <md-input-container flex>
-                  <label>Category</label>
-                  <md-select ng-model = "category" required>
-                    <md-optgroup label = "Categories">
-                      <md-option ng-value = "category.name" ng-repeat = "category in categories">{{category.name}}</md-option>
-                    </md-optgroup>
-                  </md-select>
-                </md-input-container>
-              </div>-->
-
               <div layout layout-sm="column">
                 <div class="form-group">
                   <div class="row">
@@ -130,7 +119,6 @@
                         ngf-select="uploadVideos($file, $invalidFiles)"
                         accept="video/*" ngf-max-size="500MB"><i class="glyphicon glyphicon-upload"></i>
                   <span>Upload</span></button>
-                <!--<p>{{f.result}}</p>-->
               </center>
 
               <div class="clearfix"></div>
@@ -138,6 +126,8 @@
                 <b>{{f.progress}}%</b>
               </uib-progressbar>
             </form>
+
+            <p>{{f.result}}</p>
           </div>
           <!-- /tile body -->
 
@@ -145,7 +135,7 @@
         <!-- /tile -->
 
         <!-- tile -->
-        <section class="tile tile-simple">
+        <section class="tile tile-simple" ng-show="user.aboutMe != null">
 
           <!-- tile header -->
           <div class="tile-header">
@@ -190,125 +180,52 @@
           </div>
           <!-- /tile header -->
 
-          <!-- tile -->
-          <section class="tile tile-simple">
+          <ul style="list-style: none; padding-left: 0">
+            <li ng-repeat="video in myPopularVideos | limitTo : popularLimit">
+              <!-- tile -->
+              <section class="tile tile-simple">
 
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
+                <!-- tile widget -->
+                <div class="tile-widget p-30 text-center">
 
-              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
+                  <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
 
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
+                  <a ng-href="#/app/video/{{video.url}}"><h4 class="mb-0">{{video.title}}</h4></a>
+                  <span class="text-muted">@{{user.username}}</span>
 
-            </div>
-            <!-- /tile widget -->
+                </div>
+                <!-- /tile widget -->
 
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
+                <!-- tile body -->
+                <div class="tile-body text-center bg-blue p-0">
 
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
+                  <ul class="list-inline tbox m-0">
+                    <li class="tcol p-10">
+                      <h2 class="m-0 video-box-stats">{{video.viewsCount}}</h2>
+                      <span class="text-transparent-white">Views</span>
+                    </li>
+                    <li class="tcol bg-blue dker p-10">
+                      <h2 class="m-0 video-box-stats">1 269</h2>
+                      <span class="text-transparent-white">Comments</span>
+                    </li>
+                    <li class="tcol p-10">
+                      <h2 class="m-0 video-box-stats">{{video.categoriesStr}}</h2>
+                      <span class="text-transparent-white">Category</span>
+                    </li>
+                  </ul>
 
-            </div>
-            <!-- /tile body -->
+                </div>
+                <!-- /tile body -->
 
-          </section>
-          <!-- /tile -->
-
-          <!-- tile -->
-          <section class="tile tile-simple">
-
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
-
-              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
-
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
-
-            </div>
-            <!-- /tile widget -->
-
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
-
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
-
-            </div>
-            <!-- /tile body -->
-
-          </section>
-          <!-- /tile -->
-
-          <!-- tile -->
-          <section class="tile tile-simple">
-
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
-
-              <img width="100%" height="auto" src="images/thumbnail.jpg" alt="">
-
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
-
-            </div>
-            <!-- /tile widget -->
-
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
-
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
-
-            </div>
-            <!-- /tile body -->
-
-          </section>
-          <!-- /tile -->
-
+              </section>
+              <!-- /tile -->
+            </li>
+          </ul>
 
           <!-- tile footer -->
           <div class="tile-footer">
             <div class="text-center">
-              <a href="#" class="btn btn-sm btn-default">
+              <a href="#" class="btn btn-sm btn-default" ng-click="incrementPopularLimit()">
                 Load More …
               </a>
             </div>
@@ -337,125 +254,52 @@
           </div>
           <!-- /tile header -->
 
-          <!-- tile -->
-          <section class="tile tile-simple">
+          <ul style="list-style: none; padding-left: 0">
+            <li ng-repeat="video in myFreshVideos | limitTo : freshLimit">
+              <!-- tile -->
+              <section class="tile tile-simple">
 
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
+                <!-- tile widget -->
+                <div class="tile-widget p-30 text-center">
 
-              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
+                  <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
 
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
+                  <a ng-href="#/app/video/{{video.url}}"><h4 class="mb-0">{{video.title}}</h4></a>
+                  <span class="text-muted">@{{user.username}}</span>
 
-            </div>
-            <!-- /tile widget -->
+                </div>
+                <!-- /tile widget -->
 
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
+                <!-- tile body -->
+                <div class="tile-body text-center bg-blue p-0">
 
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
+                  <ul class="list-inline tbox m-0">
+                    <li class="tcol p-10">
+                      <h2 class="m-0 video-box-stats">{{video.viewsCount}}</h2>
+                      <span class="text-transparent-white">Views</span>
+                    </li>
+                    <li class="tcol bg-blue dker p-10">
+                      <h2 class="m-0 video-box-stats">1 269</h2>
+                      <span class="text-transparent-white">Comments</span>
+                    </li>
+                    <li class="tcol p-10">
+                      <h2 class="m-0 video-box-stats">{{video.categoriesStr}}</h2>
+                      <span class="text-transparent-white">Category</span>
+                    </li>
+                  </ul>
 
-            </div>
-            <!-- /tile body -->
+                </div>
+                <!-- /tile body -->
 
-          </section>
-          <!-- /tile -->
-
-          <!-- tile -->
-          <section class="tile tile-simple">
-
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
-
-              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
-
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
-
-            </div>
-            <!-- /tile widget -->
-
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
-
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
-
-            </div>
-            <!-- /tile body -->
-
-          </section>
-          <!-- /tile -->
-
-          <!-- tile -->
-          <section class="tile tile-simple">
-
-            <!-- tile widget -->
-            <div class="tile-widget p-30 text-center">
-
-              <img width="100%" height="auto" src="images/thumbnail-f.jpg" alt="">
-
-              <h4 class="mb-0">Naslov video zapisa ma koji on bio</h4>
-              <span class="text-muted">@usernamekorisnika</span>
-
-            </div>
-            <!-- /tile widget -->
-
-            <!-- tile body -->
-            <div class="tile-body text-center bg-blue p-0">
-
-              <ul class="list-inline tbox m-0">
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">12695</h2>
-                  <span class="text-transparent-white">Views</span>
-                </li>
-                <li class="tcol bg-blue dker p-10">
-                  <h2 class="m-0 video-box-stats">1 269</h2>
-                  <span class="text-transparent-white">Comments</span>
-                </li>
-                <li class="tcol p-10">
-                  <h2 class="m-0 video-box-stats">Sports</h2>
-                  <span class="text-transparent-white">Category</span>
-                </li>
-              </ul>
-
-            </div>
-            <!-- /tile body -->
-
-          </section>
-          <!-- /tile -->
-
+              </section>
+              <!-- /tile -->
+            </li>
+          </ul>
 
           <!-- tile footer -->
           <div class="tile-footer">
             <div class="text-center">
-              <a href="#" class="btn btn-sm btn-default">
+              <a href="#" class="btn btn-sm btn-default" ng-click="incrementFreshLimit()">
                 Load More …
               </a>
             </div>

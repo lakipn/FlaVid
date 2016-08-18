@@ -1,0 +1,218 @@
+<div class="page page-tiles">
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-12">
+        <video width="100%" height="auto" controls>
+          <source ng-src="{{trustSrc(url)}}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="col-md-12" style="padding-top: 18px; padding-bottom: 18px;">
+        <div flex layout="column">
+          <section class="md-whiteframe-z1" style="background-color: white;">
+            <div class="col-md-8">
+              <h2 style="margin-top: 10px;">{{video.title}}</h2>
+            </div>
+            <div class="col-md-4" style="text-align: right;">
+              <h3 style="margin-top: 15px;">{{video.viewsCount}} views</h3>
+            </div>
+            <div class="col-md-12">
+              <p ng-bind-html="video.description"></p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div flex layout="column">
+
+          <section class="demo-container md-whiteframe-z1">
+
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings">
+                  <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+                </md-button>
+                <h2>
+                  <span>Comments</span>
+                </h2>
+                <span flex></span>
+              </div>
+            </md-toolbar>
+            <md-content layout-padding style="height: 600px;padding: 24px;">
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+              <md-list-item class="md-3-line">
+                <img ng-src="http://placekitten.com/g/600/600?25" class="md-avatar" alt="Username"/>
+                <div class="md-list-item-text">
+                  <h3>FirstName LastName</h3>
+                  <p>Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...Lorem ipsum sit dolor amet...</p>
+                </div>
+              </md-list-item>
+            </md-content>
+
+          </section>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div flex layout="column">
+
+          <section class="demo-container md-whiteframe-z1">
+
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings">
+                  <md-icon md-font-icon="zmdi zmdi-menu"></md-icon>
+                </md-button>
+                <h2>
+                  <span>Related videos</span>
+                </h2>
+                <span flex></span>
+              </div>
+            </md-toolbar>
+            <md-content layout-padding style="height: 600px;">
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="images/thumbnail.jpg" alt="Another video :)" width="100%" height="auto"/>
+                </div>
+                <div class="col-md-7" style="margin-top: -10px;">
+                  <h4>Another video :)</h4>
+                </div>
+              </div>
+            </md-content>
+
+          </section>
+
+        </div>
+      </div>
+    </div>
+    <!-- /row -->
+
+
+  </div>
+  <!-- /page content -->
+</div>

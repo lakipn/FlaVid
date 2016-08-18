@@ -44,5 +44,13 @@ app.factory('loginFactory', function () {
       });
   };
 
+  loginFactory.logout = function($scope, $http) {
+    $http.post('http://localhost:1337/user/logout').then(function(response) {
+      $scope.logout = response.data.logout;
+    }, function(response) {
+      $scope.logout = false;
+    });
+  };
+
   return loginFactory;
 });

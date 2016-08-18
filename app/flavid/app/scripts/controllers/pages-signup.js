@@ -20,13 +20,15 @@ app
 
     if($cookieStore.get('uid') != null)
     {
-      $state.go('testcookie');
+      //$state.go('testcookie');
+      $state.go('app.home');
     }
 
     $scope.$watch('posted', function() {
       if($scope.prosao && $scope.posted !== {} && $scope.posted !== "") {
         $cookieStore.put('uid', $scope.posted.id);
-        $state.go('testcookie');
+        //$state.go('testcookie');
+        $state.go('app.home');
       }
     });
 

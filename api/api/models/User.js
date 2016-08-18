@@ -5,6 +5,8 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
+var bcrypt = require('bcrypt-nodejs');
+
 module.exports = {
 
   attributes: {
@@ -30,9 +32,27 @@ module.exports = {
     interestsAndHobbies: { type: 'string', size: 512 },
     favoriteMoviesAndTvShows: { type: 'string', size: 512 },
     favoriteMusic: { type: 'string', size: 512 },
-    favoriteBooks: { type: 'string', size: 512 }
+    favoriteBooks: { type: 'string', size: 512 },
     //turnOns: { type: 'string', size: 512 },
     //turnOffs: { type: 'string', size: 512 },
+    toJSON : function() {
+      var obj = this.toObject();
+      delete obj.password;
+      return obj;
+    }
+  },
+
+  beforeCreate : function(user, cb) {
+    bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(user.password, salt, null, function(err, hash) {
+        if(err)
+          console.log(err);
+        else
+          user.password = hash;
+
+        cb();
+      })
+    });
   }
 };
 

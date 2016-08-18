@@ -11,7 +11,7 @@ app.factory('categoryFactory', function() {
   categoryFactory.getCategories = function($scope, $http) {
     $http.get('http://localhost:1337/category')
       .then(function(response) {
-        console.log(JSON.stringify(response.data));
+        //console.log(JSON.stringify(response.data));
         $scope.categories = response.data;
         return response.data;
       });

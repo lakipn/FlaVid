@@ -167,10 +167,27 @@ var app = angular
         }
       })
 
+      .state('app.categories', {
+        url: '/categories',
+        controller : 'categoriesCtrl',
+        templateUrl : 'views/tmpl/pages/categories.html'
+      })
+
+      .state('app.category', {
+        url: '/category',
+        controller : 'categoryCtrl',
+        templateUrl : 'views/tmpl/pages/category.html'
+      })
+
+      .state('app.video', {
+        url: '/video/{videoUrl}',
+        controller : 'videoCtrl',
+        templateUrl : 'views/tmpl/pages/video.html'
+      })
 
       //profile/myprofile
       .state('app.profile', {
-        url: '/profile',
+        url: '/profile/{username}',
         controller: 'profileCtrl',
         templateUrl: 'views/tmpl/pages/profile.html'
       });

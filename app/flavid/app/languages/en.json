@@ -74,7 +74,16 @@
     "DOCUMENTATION": "Documentation",
     "MASONRY": "Masonry",
     "INTRO": "Intro page",
-    "DRAGULA": "Dragula"
+    "DRAGULA": "Dragula",
+
+    "HOMEPAGE" : "Home",
+    "CATEGORIES" : "Categories",
+    "CATEGORY" : "Category",
+    "FORGOTPASS" : "Forgot password",
+    "LOGIN" : "Login",
+    "REGISTER" : "Register",
+    "PROFILE" : "Profile",
+    "VIDEO" : "Video"
   }
 }
 

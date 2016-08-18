@@ -1,6 +1,6 @@
 {
-  "name": "minovate",
-  "version": "1.2.0",
+  "name": "flavid",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.1",

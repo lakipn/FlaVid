@@ -8,10 +8,10 @@
  * Controller of the flavidApp
  */
 app
-  .controller('MainCtrl', function ($scope, $http, $translate) {
+  .controller('MainCtrl', ['$scope', '$http', '$translate', '$cookieStore', '$state', 'loginFactory', function ($scope, $http, $translate, $cookieStore, $state, loginFactory) {
 
     $scope.main = {
-      title: 'Minovate',
+      title: 'FlaVid',
       settings: {
         navbarHeaderColor: 'scheme-default',
         sidebarColor: 'scheme-default',
@@ -38,4 +38,17 @@ app
       $scope.currentLanguage = langKey;
     };
     $scope.currentLanguage = $translate.proposedLanguage() || $translate.use();
-  });
+
+    $scope.logout = false;
+
+    $scope.signout = function () {
+      $scope.$watch('logout', function () {
+        if ($scope.logout != false) {
+          $cookieStore.remove('uid');
+          $state.go('core.login');
+        }
+      });
+
+      loginFactory.logout($scope, $http);
+    };
+  }]);
